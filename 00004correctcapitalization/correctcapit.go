@@ -1,30 +1,24 @@
 package main
 
 import (
-	"math"
 	"regexp"
 )
 
 type Score struct {
-	score float64
+	score int
 }
 
 func (s *Score) addToScore(multiplier int) {
-	s.score += float64(multiplier)
+	s.score += multiplier
 }
 
 func (s *Score) subtractToScore(multiplier int) {
-	s.score -= float64(multiplier)
-}
-
-func (s *Score) getScore() int {
-	absoluteScore := math.Abs(s.score)
-	return int(absoluteScore)
+	s.score -= multiplier
 }
 
 func HasCorrectCapitalization(str string) bool {
 	Score := Score{0}
-	allCaps := regexp.MustCompile(`[a-z]`)
+	allCaps := regexp.MustCompile(`[A-Z]`)
 
 	for idx, char := range str {
 		isCaps := allCaps.MatchString(string(char))
@@ -36,6 +30,6 @@ func HasCorrectCapitalization(str string) bool {
 			Score.addToScore(1)
 		}
 	}
-	sizeDiff := len(str) - Score.getScore()
+	sizeDiff := len(str) + int(Score.score)
 	return sizeDiff % 2 == 0
 }
