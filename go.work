@@ -1,0 +1,6 @@
+go 1.20
+
+use ./00001reversestr
+use ./00002validpalindrome
+use ./00003vacuumcleaning
+use ./00004correctcapitalization
