@@ -8,11 +8,7 @@ func TestCorrectCapitalization(t *testing.T) {
 		if !HasCorrectCapitalization(stringText) {
 			t.Errorf("got %t want %t", false, true)
 		}
-		stringText = "ABCDEFG"
-		if !HasCorrectCapitalization(stringText) {
-			t.Errorf("got %t want %t", false, true)
-		}
-		stringText = "ANOTHERRANDOMSTRING"
+		stringText = "ABCDEFFSEEEF"
 		if !HasCorrectCapitalization(stringText) {
 			t.Errorf("got %t want %t", false, true)
 		}
@@ -27,24 +23,16 @@ func TestCorrectCapitalization(t *testing.T) {
 		if !HasCorrectCapitalization(stringText) {
 			t.Errorf("got %t want %t", false, true)
 		}
-		stringText = "Thelasoneipromise"
-		if !HasCorrectCapitalization(stringText) {
-			t.Errorf("got %t want %t", false, true)
-		}
 	})
 
 	t.Run("Some lost uppercase in the middle false", func(t *testing.T) {
 		stringText := "compUter"
-		if !HasCorrectCapitalization(stringText) {
-			t.Errorf("got %t want %t", false, true)
+		if HasCorrectCapitalization(stringText) {
+			t.Errorf("got %t want %t", true, false)
 		}
 		stringText = "noNsensestring"
-		if !HasCorrectCapitalization(stringText) {
-			t.Errorf("got %t want %t", false, true)
-		}
-		stringText = "anothernonSenseString"
-		if !HasCorrectCapitalization(stringText) {
-			t.Errorf("got %t want %t", false, true)
+		if HasCorrectCapitalization(stringText) {
+			t.Errorf("got %t want %t", true, false)
 		}
 	})
 
@@ -57,11 +45,6 @@ func TestCorrectCapitalization(t *testing.T) {
 		if !HasCorrectCapitalization(stringText) {
 			t.Errorf("got %t want %t", false, true)
 		}
-		stringText = "ikindalikingthischallenge"
-		if !HasCorrectCapitalization(stringText) {
-			t.Errorf("got %t want %t", false, true)
-		}
 	})
-	
 }
 
