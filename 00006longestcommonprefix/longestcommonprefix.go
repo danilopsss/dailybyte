@@ -24,10 +24,10 @@ func (s stringEval) LongestPrefix() string {
 	var sequencesGotten string
 	var sequence string
 
-	smallerWord, loopSize := s.LoopSize()
+	smallerWordIdx, loopSize := s.LoopSize()
 	for i := 0; i < loopSize; i++ {
 		if s.IndexIsValid(i) {
-			sequence += string(s.wordList[smallerWord][i])
+			sequence += string(s.wordList[smallerWordIdx][i])
 			continue
 		} 
 		if len(sequence) > len(sequencesGotten) {
