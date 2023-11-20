@@ -9,3 +9,4 @@ use ./00004correctcapitalization
 use ./00005binarysum
 use ./00006longestcommonprefix
 use ./00007validpalindrome2
+use ./00008twosum
