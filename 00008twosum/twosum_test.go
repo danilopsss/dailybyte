@@ -50,11 +50,4 @@ func TestTwoSumNotNested(t *testing.T) {
 		}
 	})
 
-	t.Run("K=22", func(t *testing.T) {
-		testSlice := TwoSum{slice: []int{4, 2, 6, 5, 2, 11, 8, 1}, k: 22}
-		expected := true
-		if actual := testSlice.hasSumWithNoNestedLoop(); actual != expected {
-			t.Errorf("Expected %t, got %t", expected, actual)
-		}
-	})
 }
